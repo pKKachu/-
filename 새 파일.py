@@ -6,7 +6,8 @@ def parsing(host): # raw socket 생성 및 bind
     if os.name=="nt":
         sock_protocol=IPPROTO_IP
     else:0
-        sock_protocol=IPPROTO_ICMP
+    
+    sock_protocol=IPPROTO_ICMP
     sock=socket(AF_INET, SOCK_RAW, sock_protocol)
     sock.bind((host, 0))
     
@@ -27,6 +28,3 @@ def parsing(host): # raw socket 생성 및 bind
             host="192.168.45.184" # 자신의 IP주소로 변경
             print(f"Listening at [{host}]")
             parsing(host)
-        
-    
-    
